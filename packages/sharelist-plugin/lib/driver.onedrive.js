@@ -443,7 +443,19 @@ class Driver {
         path: data.parentReference ? data.parentReference.path.split('root:')[1] : '',
       },
     }
-
+    
+        if (result.download_url) {
+      // 使用中转
+      if (true) {
+        result.extra.proxy = {
+          headers: {
+            'user-agent': 'ymps2-my.sharepoint.com',
+            'referer': 'https://ymps2-my.sharepoint.com'
+          },
+        }
+      }
+    } 
+    
     return result
   }
 
